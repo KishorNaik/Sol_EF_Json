@@ -21,24 +21,52 @@ namespace Sol_Api.Controllers
             this.userRepository = userRepository;
         }
 
-        [HttpPost("getuserswithmodel")]
-        public async Task<IActionResult> GetUserDataWithModelAsync()
+        //http://localhost:1546/api/users/getusersonetoonewithmodel
+        [HttpPost("getusersonetoonewithmodel")]
+        public async Task<IActionResult> GetUserDataOneToOneWithModelAsync()
         {
             var getUserData =
                     await
                     userRepository
-                    ?.GetUserDataWithModelAsync();
+                    ?.GetUserDataOneToOneWithModelAsync();
 
             return base.Ok((Object)getUserData);
         }
 
-        [HttpPost("getuserswithoutmodel")]
-        public async Task<IActionResult> GetUserDataWithoutModelAsync()
+        // http://localhost:1546/api/users/getusersonetoonewithoutmodel
+        [HttpPost("getusersonetoonewithoutmodel")]
+        public async Task<IActionResult> GetUserDataOneToOneWithoutModelAsync()
         {
             var getUserData =
                     await
                     userRepository
-                    ?.GetUserDataWithoutModelAsync();
+                    ?.GetUserDataOneToOneWithoutModelAsync();
+
+            var content = base.Content(getUserData, "application/json");
+
+            return content;
+        }
+
+        //http://localhost:1546/api/users/getusersonetomanywithmodel
+        [HttpPost("getusersonetomanywithmodel")]
+        public async Task<IActionResult> GetUserDataOneToManyWithModelAsync()
+        {
+            var getUserData =
+                    await
+                    userRepository
+                    ?.GetUserDataOneToManyWithModelAsync();
+
+            return base.Ok((Object)getUserData);
+        }
+
+        // http://localhost:1546/api/users/getusersonetomanywithoutmodel
+        [HttpPost("getusersonetomanywithoutmodel")]
+        public async Task<IActionResult> GetUserDataOneToManyWithoutModelAsync()
+        {
+            var getUserData =
+                    await
+                    userRepository
+                    ?.GetUserDataOneToManyWithoutModelAsync();
 
             var content = base.Content(getUserData, "application/json");
 

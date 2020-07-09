@@ -8,8 +8,12 @@ namespace Sol_Api.Repository
 {
     public interface IUserRepository
     {
-        Task<IEnumerable<UserModel>> GetUserDataWithModelAsync();
+        Task<IEnumerable<UserModel>> GetUserDataOneToOneWithModelAsync();
 
-        Task<String> GetUserDataWithoutModelAsync();
+        Task<String> GetUserDataOneToOneWithoutModelAsync();
+
+        Task<IEnumerable<UserModel>> GetUserDataOneToManyWithModelAsync();
+
+        Task<String> GetUserDataOneToManyWithoutModelAsync();
     }
 }

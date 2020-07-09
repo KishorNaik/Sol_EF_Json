@@ -20,5 +20,8 @@ namespace Sol_Api.Models
 
         [DataMember(EmitDefaultValue = false)]
         public UserLoginModel UserLogin { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public List<UserCommunicationModel> UserCommunicationList { get; set; }
     }
 }

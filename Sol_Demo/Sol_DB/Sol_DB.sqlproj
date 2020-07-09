@@ -62,10 +62,16 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="dbo\TestQuery" />
+    <Folder Include="dbo\Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\tblUsers.sql" />
     <Build Include="dbo\Tables\tblUserLogin.sql" />
     <Build Include="dbo\Stored Procedures\uspGetUsers.sql" />
+    <Build Include="dbo\TestQuery\OneToMany.sql" />
+    <Build Include="dbo\TestQuery\OneToOne.sql" />
+    <Build Include="dbo\Tables\tblUserCommunication.sql" />
+    <Build Include="dbo\Views\udvUserLogin.sql" />
+    <Build Include="dbo\Views\udvUserCommunication.sql" />
   </ItemGroup>
 </Project>
